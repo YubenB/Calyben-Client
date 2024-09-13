@@ -22,7 +22,6 @@ const Sidebar = ({ user }: SiderbarProps) => {
           />
           <h1 className="sidebar-logo">Calyben</h1>
         </Link>
-
         {sidebarLinks.map((items) => {
           const isActive =
             pathName === items.route || pathName.startsWith(`${items.route}/`);
@@ -30,7 +29,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
             <Link
               href={items.route}
               key={items.label}
-              className={cn("flex items-center gap-2 p-2 rounded-md", {
+              className={cn("sidebar-link", {
                 "bg-bank-gradient": isActive,
               })}
             >
@@ -54,7 +53,9 @@ const Sidebar = ({ user }: SiderbarProps) => {
             </Link>
           );
         })}
+        USER
       </nav>
+      FOOTER
     </section>
   );
 };
